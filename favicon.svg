@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hadley lab">
+  <defs>
+    <radialGradient id="g" cx="38%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#6a9bb0"/>
+      <stop offset="55%" stop-color="#2a4a68"/>
+      <stop offset="100%" stop-color="#0b1524"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#05070c"/>
+  <circle cx="32" cy="32" r="26" fill="url(#g)" stroke="#7aa8c4" stroke-width="1.5"/>
+  <!-- equator -->
+  <ellipse cx="32" cy="32" rx="26" ry="9" fill="none" stroke="#e8c090" stroke-width="1.2" opacity="0.85"/>
+  <!-- Hadley cell arcs (upper outflow / lower return hint) -->
+  <path d="M18 28 C24 18, 40 18, 46 28" fill="none" stroke="#7aa8c4" stroke-width="1.6" stroke-linecap="round" opacity="0.95"/>
+  <path d="M46 36 C40 46, 24 46, 18 36" fill="none" stroke="#c49a78" stroke-width="1.6" stroke-linecap="round" opacity="0.95"/>
+  <!-- ITCZ tick -->
+  <circle cx="32" cy="32" r="2.2" fill="#e8c090"/>
+</svg>

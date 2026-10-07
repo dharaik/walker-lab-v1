@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Walker Lab · ENSO · equatorial Pacific overturning</title>
+  <meta name="description" content="Orthographic Blue Marble with dual-height Walker overturning particles. Toggle ENSO: Neutral | El Niño | La Niña. Schematic equatorial Pacific teaching toy." />
+  <meta name="theme-color" content="#05070c" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:title" content="Walker Lab · ENSO · equatorial Pacific overturning" />
+  <meta property="og:description" content="Dual-height Walker cell on an orthographic Blue Marble — Neutral, El Niño, La Niña." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Walker Lab · ENSO" />
+  <meta name="twitter:description" content="Schematic equatorial Pacific Walker overturning with ENSO modes." />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="apple-touch-icon" href="./favicon.svg" />
+  <script type="module" crossorigin src="./assets/index-CqO6jJjr.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DfbJ6qd_.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Walker Lab · ENSO</h1>
+        <span class="tag">equatorial Pacific · dual-height · guided tour</span>
+      </div>
+      <p class="lede">
+        Dual-height particles on an orthographic Blue Marble. Toggle ENSO mode:
+        Neutral (classic Walker) · El Niño (weakened trades, ascent shifts east) ·
+        La Niña (stronger trades, west ascent / steeper tilt).
+        A teaching toy — not a coupled ENSO model.
+      </p>
+    </header>
+
+    <main class="stage">
+      <div id="view3d" class="view3d" aria-label="Orthographic Earth with Walker particle wind field"></div>
+      <canvas id="inset" class="inset" width="280" height="160" aria-label="Lon–height Walker streamfunction schematic"></canvas>
+      <div class="hud">
+        <div class="metrics" id="metrics"></div>
+        <p class="status" id="status"></p>
+      </div>
+      <nav class="stage-rail" id="stageRail" aria-label="Guided tour stages">
+        <button class="rail-nav" id="stagePrev" type="button" aria-label="Previous stage">‹</button>
+        <ol class="rail-steps" id="railSteps"></ol>
+        <button class="rail-nav" id="stageNext" type="button" aria-label="Next stage">›</button>
+      </nav>
+    </main>
+
+    <aside class="panel">
+      <section class="block" id="stageCardWrap">
+        <h2>Stage <span id="stageNum">1 / 4</span></h2>
+        <div class="stage-card" id="stageCard">
+          <div class="stage-title" id="stageTitle">—</div>
+          <p class="stage-story" id="stageStory">—</p>
+          <div class="stage-metrics" id="stageMetrics"></div>
+          <div class="stage-cite" id="stageCite"></div>
+          <div class="stage-does" id="stageDoes"></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Knobs</h2>
+        <label class="row">West–east SST contrast <span id="sstOut">1.00</span>
+          <input id="sstContrast" type="range" min="0.3" max="2" step="0.05" value="1" />
+        </label>
+        <p class="hint" style="margin:4px 0 0;font-size:10px;color:var(--muted)">Mode presets set trades, tilt, and ascent. Bjerknes wind↔thermocline↔SST feedback is caption-only (stage 4) — not a knob.</p>
+        <div class="seg-label">ENSO mode</div>
+        <div class="seg seg-cells" role="group" aria-label="ENSO mode">
+          <button type="button" data-enso="neutral" class="on">Neutral</button>
+          <button type="button" data-enso="nino">El Niño</button>
+          <button type="button" data-enso="nina">La Niña</button>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Overlays</h2>
+        <label class="chk"><input id="ovSst" type="checkbox" checked /> Equatorial SST band</label>
+        <label class="chk"><input id="ovAscent" type="checkbox" checked /> Ascent / descent markers</label>
+        <label class="chk"><input id="ovInset" type="checkbox" checked /> Lon–height ψ inset</label>
+        <label class="chk"><input id="ovThermo" type="checkbox" checked /> Thermocline tilt in metrics</label>
+      </section>
+
+      <section class="block anchors">
+        <h2>Anchors</h2>
+        <ul id="anchorsWalker">
+          <li>Eq. Pacific band ~±10°</li>
+          <li>Ascent west warm pool (~130°E class)</li>
+          <li>Descent east cold tongue (~90°W class)</li>
+          <li>Lower easterlies / upper westerlies</li>
+          <li>El Niño: weaker, ascent east</li>
+          <li>La Niña: stronger, steeper tilt</li>
+        </ul>
+      </section>
+
+      <section class="block howto">
+        <h2>How</h2>
+        <p id="howLine">
+          Pacific Walker: equatorial zonal overturning — ascent over the Maritime Continent/warm pool (~120–150°E), descent over the eastern Pacific (~80–100°W); lower easterlies, upper westerlies. Particles are a ±5–10° toy, not Hadley or storm tracks.
+        </p>
+        <p class="hint">Drag to orbit · scroll to zoom · continents are scenery · tour rail steps the story.</p>
+      </section>
+    </aside>
+  </div>
+</body>
+</html>
